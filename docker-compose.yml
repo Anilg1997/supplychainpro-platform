@@ -169,7 +169,7 @@ services:
   # ==========================================
   service-registry:
     build:
-      context: ./services/service-registry
+      context: ./backend/service-registry
       dockerfile: Dockerfile
     container_name: scp-service-registry
     ports:
@@ -185,8 +185,8 @@ services:
 
   config-server:
     build:
-      context: ./services/config-server
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: backend/config-server/Dockerfile
     container_name: scp-config-server
     ports:
       - "8888:8888"
@@ -204,7 +204,7 @@ services:
 
   api-gateway:
     build:
-      context: ./services/api-gateway
+      context: ./backend/api-gateway
       dockerfile: Dockerfile
     container_name: scp-api-gateway
     ports:
@@ -225,7 +225,7 @@ services:
 
   auth-service:
     build:
-      context: ./services/auth-service
+      context: ./backend/auth-service
       dockerfile: Dockerfile
     container_name: scp-auth-service
     ports:
@@ -248,7 +248,7 @@ services:
 
   user-service:
     build:
-      context: ./services/user-service
+      context: ./backend/user-service
       dockerfile: Dockerfile
     container_name: scp-user-service
     ports:
@@ -271,7 +271,7 @@ services:
 
   supplier-service:
     build:
-      context: ./services/supplier-service
+      context: ./backend/supplier-service
       dockerfile: Dockerfile
     container_name: scp-supplier-service
     ports:
@@ -294,7 +294,7 @@ services:
 
   purchase-requisition-service:
     build:
-      context: ./services/purchase-requisition-service
+      context: ./backend/purchase-requisition-service
       dockerfile: Dockerfile
     container_name: scp-purchase-requisition-service
     ports:
@@ -315,7 +315,7 @@ services:
 
   purchase-order-service:
     build:
-      context: ./services/purchase-order-service
+      context: ./backend/purchase-order-service
       dockerfile: Dockerfile
     container_name: scp-purchase-order-service
     ports:
@@ -336,7 +336,7 @@ services:
 
   rfq-service:
     build:
-      context: ./services/rfq-service
+      context: ./backend/rfq-service
       dockerfile: Dockerfile
     container_name: scp-rfq-service
     ports:
@@ -357,7 +357,7 @@ services:
 
   contract-service:
     build:
-      context: ./services/contract-service
+      context: ./backend/contract-service
       dockerfile: Dockerfile
     container_name: scp-contract-service
     ports:
@@ -378,7 +378,7 @@ services:
 
   product-catalog-service:
     build:
-      context: ./services/product-catalog-service
+      context: ./backend/product-catalog-service
       dockerfile: Dockerfile
     container_name: scp-product-catalog-service
     ports:
@@ -397,7 +397,7 @@ services:
 
   inventory-service:
     build:
-      context: ./services/inventory-service
+      context: ./backend/inventory-service
       dockerfile: Dockerfile
     container_name: scp-inventory-service
     ports:
@@ -420,7 +420,7 @@ services:
 
   warehouse-service:
     build:
-      context: ./services/warehouse-service
+      context: ./backend/warehouse-service
       dockerfile: Dockerfile
     container_name: scp-warehouse-service
     ports:
@@ -441,7 +441,7 @@ services:
 
   order-service:
     build:
-      context: ./services/order-service
+      context: ./backend/order-service
       dockerfile: Dockerfile
     container_name: scp-order-service
     ports:
@@ -462,7 +462,7 @@ services:
 
   return-service:
     build:
-      context: ./services/return-service
+      context: ./backend/return-service
       dockerfile: Dockerfile
     container_name: scp-return-service
     ports:
@@ -483,7 +483,7 @@ services:
 
   shipment-service:
     build:
-      context: ./services/shipment-service
+      context: ./backend/shipment-service
       dockerfile: Dockerfile
     container_name: scp-shipment-service
     ports:
@@ -504,7 +504,7 @@ services:
 
   route-service:
     build:
-      context: ./services/route-service
+      context: ./backend/route-service
       dockerfile: Dockerfile
     container_name: scp-route-service
     ports:
@@ -523,7 +523,7 @@ services:
 
   tracking-service:
     build:
-      context: ./services/tracking-service
+      context: ./backend/tracking-service
       dockerfile: Dockerfile
     container_name: scp-tracking-service
     ports:
@@ -544,7 +544,7 @@ services:
 
   quality-service:
     build:
-      context: ./services/quality-service
+      context: ./backend/quality-service
       dockerfile: Dockerfile
     container_name: scp-quality-service
     ports:
@@ -567,7 +567,7 @@ services:
 
   quarantine-service:
     build:
-      context: ./services/quarantine-service
+      context: ./backend/quarantine-service
       dockerfile: Dockerfile
     container_name: scp-quarantine-service
     ports:
@@ -588,7 +588,7 @@ services:
 
   forecast-service:
     build:
-      context: ./services/forecast-service
+      context: ./backend/forecast-service
       dockerfile: Dockerfile
     container_name: scp-forecast-service
     ports:
@@ -609,7 +609,7 @@ services:
 
   planning-service:
     build:
-      context: ./services/planning-service
+      context: ./backend/planning-service
       dockerfile: Dockerfile
     container_name: scp-planning-service
     ports:
@@ -628,7 +628,7 @@ services:
 
   invoice-service:
     build:
-      context: ./services/invoice-service
+      context: ./backend/invoice-service
       dockerfile: Dockerfile
     container_name: scp-invoice-service
     ports:
@@ -649,7 +649,7 @@ services:
 
   payment-service:
     build:
-      context: ./services/payment-service
+      context: ./backend/payment-service
       dockerfile: Dockerfile
     container_name: scp-payment-service
     ports:
@@ -670,7 +670,7 @@ services:
 
   cost-service:
     build:
-      context: ./services/cost-service
+      context: ./backend/cost-service
       dockerfile: Dockerfile
     container_name: scp-cost-service
     ports:
@@ -689,7 +689,7 @@ services:
 
   supplier-portal-service:
     build:
-      context: ./services/supplier-portal-service
+      context: ./backend/supplier-portal-service
       dockerfile: Dockerfile
     container_name: scp-supplier-portal-service
     ports:
@@ -712,7 +712,7 @@ services:
 
   report-service:
     build:
-      context: ./services/report-service
+      context: ./backend/report-service
       dockerfile: Dockerfile
     container_name: scp-report-service
     ports:
@@ -733,7 +733,7 @@ services:
 
   analytics-service:
     build:
-      context: ./services/analytics-service
+      context: ./backend/analytics-service
       dockerfile: Dockerfile
     container_name: scp-analytics-service
     ports:
@@ -754,7 +754,7 @@ services:
 
   notification-service:
     build:
-      context: ./services/notification-service
+      context: ./backend/notification-service
       dockerfile: Dockerfile
     container_name: scp-notification-service
     ports:
@@ -777,7 +777,7 @@ services:
 
   audit-service:
     build:
-      context: ./services/audit-service
+      context: ./backend/audit-service
       dockerfile: Dockerfile
     container_name: scp-audit-service
     ports:
@@ -798,7 +798,7 @@ services:
 
   search-service:
     build:
-      context: ./services/search-service
+      context: ./backend/search-service
       dockerfile: Dockerfile
     container_name: scp-search-service
     ports:

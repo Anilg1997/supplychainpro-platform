@@ -19,37 +19,37 @@
     <description>Enterprise Supply Chain Management Platform</description>
 
     <modules>
-        <module>services/service-registry</module>
-        <module>services/config-server</module>
-        <module>services/api-gateway</module>
-        <module>services/auth-service</module>
-        <module>services/user-service</module>
-        <module>services/supplier-service</module>
-        <module>services/purchase-requisition-service</module>
-        <module>services/purchase-order-service</module>
-        <module>services/rfq-service</module>
-        <module>services/contract-service</module>
-        <module>services/product-catalog-service</module>
-        <module>services/inventory-service</module>
-        <module>services/warehouse-service</module>
-        <module>services/order-service</module>
-        <module>services/return-service</module>
-        <module>services/shipment-service</module>
-        <module>services/route-service</module>
-        <module>services/tracking-service</module>
-        <module>services/quality-service</module>
-        <module>services/quarantine-service</module>
-        <module>services/forecast-service</module>
-        <module>services/planning-service</module>
-        <module>services/invoice-service</module>
-        <module>services/payment-service</module>
-        <module>services/cost-service</module>
-        <module>services/supplier-portal-service</module>
-        <module>services/report-service</module>
-        <module>services/analytics-service</module>
-        <module>services/notification-service</module>
-        <module>services/audit-service</module>
-        <module>services/search-service</module>
+        <module>backend/service-registry</module>
+        <module>backend/config-server</module>
+        <module>backend/api-gateway</module>
+        <module>backend/auth-service</module>
+        <module>backend/user-service</module>
+        <module>backend/supplier-service</module>
+        <module>backend/purchase-requisition-service</module>
+        <module>backend/purchase-order-service</module>
+        <module>backend/rfq-service</module>
+        <module>backend/contract-service</module>
+        <module>backend/product-catalog-service</module>
+        <module>backend/inventory-service</module>
+        <module>backend/warehouse-service</module>
+        <module>backend/order-service</module>
+        <module>backend/return-service</module>
+        <module>backend/shipment-service</module>
+        <module>backend/route-service</module>
+        <module>backend/tracking-service</module>
+        <module>backend/quality-service</module>
+        <module>backend/quarantine-service</module>
+        <module>backend/forecast-service</module>
+        <module>backend/planning-service</module>
+        <module>backend/invoice-service</module>
+        <module>backend/payment-service</module>
+        <module>backend/cost-service</module>
+        <module>backend/supplier-portal-service</module>
+        <module>backend/report-service</module>
+        <module>backend/analytics-service</module>
+        <module>backend/notification-service</module>
+        <module>backend/audit-service</module>
+        <module>backend/search-service</module>
     </modules>
 
     <properties>
