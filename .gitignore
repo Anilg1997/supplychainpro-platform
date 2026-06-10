@@ -1,0 +1,86 @@
+# === Java ===
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# === Maven ===
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# === Spring Boot ===
+*.log
+logs/
+application-local.yml
+
+# === IDE ===
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+*.swp
+*.swo
+*~
+nbproject/
+nb-dist/
+nbactions/
+nb-configuration.xml
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.DS_Store
+Thumbs.db
+
+# === Angular ===
+frontend/supplychainpro-ui/node_modules/
+frontend/supplychainpro-ui/dist/
+frontend/supplychainpro-ui/.angular/
+frontend/supplychainpro-ui/.sass-cache/
+frontend/supplychainpro-ui/coverage/
+frontend/supplychainpro-ui/.env.local
+frontend/supplychainpro-ui/.env.*.local
+
+# === Docker ===
+docker-compose.override.yml
+.env
+!.env.example
+
+# === Gradle ===
+.gradle/
+build/
+
+# === OS ===
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# === Testing ===
+*.test
+*.spec
+surefire-reports/
+failsafe-reports/
+
+# === Misc ===
+*.bak
+*.tmp
+*.temp
+.cache/
+node_modules/

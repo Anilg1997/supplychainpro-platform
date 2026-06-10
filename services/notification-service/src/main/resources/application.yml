@@ -1,0 +1,38 @@
+server:
+  port: 8106
+
+spring:
+  application:
+    name: notification-service
+  data:
+    mongodb:
+      host: mongodb
+      port: 27017
+      database: supplychainpro
+      username: ${MONGO_INITDB_ROOT_USERNAME:admin}
+      password: ${MONGO_INITDB_ROOT_PASSWORD:Mongo@2024}
+      authentication-database: admin
+  data:
+    redis:
+      host: redis
+      port: 6379
+      password: ${REDIS_PASSWORD:Redis@2024}
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:kafka:29092}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER_URL:http://service-registry:8761/eureka/}
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+
+logging:
+  level:
+    com.supplychainpro.notification: DEBUG

@@ -1,0 +1,54 @@
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 16px;
+  .sidebar-logo {
+    color: #1976d2;
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+  }
+  .sidebar-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a2e;
+    white-space: nowrap;
+  }
+}
+
+.sidebar-search {
+  padding: 8px 12px;
+  .search-field {
+    width: 100%;
+    ::ng-deep .mat-mdc-form-field-subscript-wrapper { display: none; }
+    ::ng-deep .mat-mdc-text-field-wrapper { height: 40px; }
+    ::ng-deep .mat-mdc-input-element { font-size: 13px; }
+  }
+}
+
+.sidebar-nav {
+  padding-top: 4px;
+  .active-link {
+    background-color: rgba(25, 118, 210, 0.1) !important;
+    color: #1976d2 !important;
+    border-right: 3px solid #1976d2;
+  }
+  .mat-mdc-list-item {
+    height: 44px;
+    margin: 2px 8px;
+    border-radius: 8px;
+    &:hover { background-color: rgba(0,0,0,0.04); }
+  }
+  .nav-label { font-size: 14px; font-weight: 500; }
+  .nav-badge {
+    background: #f44336;
+    color: white;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    min-width: 20px;
+    text-align: center;
+  }
+}

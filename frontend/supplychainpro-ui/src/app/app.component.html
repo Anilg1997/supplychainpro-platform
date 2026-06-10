@@ -1,0 +1,14 @@
+<mat-sidenav-container fullscreen *ngIf="authService.isLoggedIn() | async; else loginView">
+  <mat-sidenav #sidenav mode="side" opened class="app-sidenav">
+    <app-sidebar (navigate)="sidenav.close()"></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header (toggleSidenav)="sidenav.toggle()"></app-header>
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<ng-template #loginView>
+  <router-outlet></router-outlet>
+</ng-template>

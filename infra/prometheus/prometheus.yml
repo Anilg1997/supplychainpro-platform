@@ -1,0 +1,40 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'supplychainpro-services'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets:
+          - 'service-registry:8761'
+          - 'config-server:8888'
+          - 'api-gateway:8080'
+          - 'auth-service:8081'
+          - 'user-service:8082'
+          - 'supplier-service:8083'
+          - 'purchase-requisition-service:8084'
+          - 'purchase-order-service:8085'
+          - 'rfq-service:8086'
+          - 'contract-service:8087'
+          - 'product-catalog-service:8088'
+          - 'inventory-service:8089'
+          - 'warehouse-service:8900'
+          - 'order-service:8091'
+          - 'return-service:8092'
+          - 'shipment-service:8093'
+          - 'route-service:8094'
+          - 'tracking-service:8095'
+          - 'quality-service:8096'
+          - 'quarantine-service:8097'
+          - 'forecast-service:8098'
+          - 'planning-service:8099'
+          - 'invoice-service:8100'
+          - 'payment-service:8101'
+          - 'cost-service:8102'
+          - 'supplier-portal-service:8103'
+          - 'report-service:8104'
+          - 'analytics-service:8105'
+          - 'notification-service:8106'
+          - 'audit-service:8107'
+          - 'search-service:8108'
