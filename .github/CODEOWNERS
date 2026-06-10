@@ -1,0 +1,30 @@
+# ==========================================
+# SupplyChain Pro - CODEOWNERS
+# ==========================================
+# This file defines code owners for automatic review assignments
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything
+* @Anilg1997
+
+# Backend services
+/backend/ @Anilg1997
+
+# Frontend
+/frontend/ @Anilg1997
+
+# Infrastructure and Docker
+/docker-compose.yml @Anilg1997
+/infra/ @Anilg1997
+Dockerfile @Anilg1997
+
+# CI/CD
+/.github/ @Anilg1997
+
+# Configuration
+/config-repo/ @Anilg1997
+pom.xml @Anilg1997
+
+# Documentation
+README.md @Anilg1997
+*.md @Anilg1997

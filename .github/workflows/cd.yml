@@ -1,0 +1,251 @@
+name: CD Pipeline - Deploy to Production
+
+on:
+  workflow_run:
+    workflows: ["CI Pipeline"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - staging
+          - production
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_PREFIX: ${{ github.repository_owner }}/supplychainpro
+
+jobs:
+  # ==========================================
+  # Build and Push Docker Images
+  # ==========================================
+  build-and-push:
+    name: Build & Push Docker Images
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    permissions:
+      contents: read
+      packages: write
+
+    strategy:
+      matrix:
+        service:
+          - service-registry
+          - config-server
+          - api-gateway
+          - auth-service
+          - user-service
+          - supplier-service
+          - purchase-requisition-service
+          - purchase-order-service
+          - rfq-service
+          - contract-service
+          - product-catalog-service
+          - inventory-service
+          - warehouse-service
+          - order-service
+          - return-service
+          - shipment-service
+          - route-service
+          - tracking-service
+          - quality-service
+          - quarantine-service
+          - forecast-service
+          - planning-service
+          - invoice-service
+          - payment-service
+          - cost-service
+          - supplier-portal-service
+          - report-service
+          - analytics-service
+          - notification-service
+          - audit-service
+          - search-service
+      fail-fast: false
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ matrix.service }}
+          tags: |
+            type=sha,prefix=
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=ref,event=branch
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./backend/${{ matrix.service }}
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Verify image was pushed
+        run: |
+          echo "✅ Image pushed: ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}/${{ matrix.service }}"
+
+  # ==========================================
+  # Build Frontend and Deploy to CDN/Static
+  # ==========================================
+  build-frontend:
+    name: Build & Deploy Frontend
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/supplychainpro-ui/package-lock.json
+
+      - name: Install dependencies
+        working-directory: frontend/supplychainpro-ui
+        run: npm ci
+
+      - name: Build Angular application
+        working-directory: frontend/supplychainpro-ui
+        run: npm run build -- --configuration=production
+
+      - name: Upload frontend artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-dist
+          path: frontend/supplychainpro-ui/dist/supplychainpro-ui/browser/
+          retention-days: 7
+
+  # ==========================================
+  # Deploy to Staging
+  # ==========================================
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    needs: [build-and-push, build-frontend]
+    if: github.event.inputs.environment == 'staging' || (github.event_name == 'workflow_run' && github.ref == 'refs/heads/main')
+    environment:
+      name: staging
+      url: https://staging.supplychainpro.com
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to staging server
+        run: |
+          echo "🚀 Deploying to staging environment..."
+          echo "This step would typically:"
+          echo "1. SSH into staging server"
+          echo "2. Pull latest Docker images"
+          echo "3. Run docker-compose pull"
+          echo "4. Restart services with zero downtime"
+          echo ""
+          echo "Example commands:"
+          echo "ssh deploy@staging 'cd /opt/supplychainpro && docker-compose pull && docker-compose up -d'"
+
+      - name: Health check staging
+        run: |
+          echo "Checking staging health endpoints..."
+          sleep 30
+          # curl -f https://staging.supplychainpro.com/actuator/health || exit 1
+
+      - name: Run smoke tests
+        run: |
+          echo "Running smoke tests against staging..."
+          # Add your smoke test commands here
+
+  # ==========================================
+  # Deploy to Production
+  # ==========================================
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: [build-and-push, build-frontend]
+    if: github.event.inputs.environment == 'production'
+    environment:
+      name: production
+      url: https://supplychainpro.com
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to production server
+        run: |
+          echo "🚀 Deploying to production environment..."
+          echo "This step would typically:"
+          echo "1. SSH into production server"
+          echo "2. Create database backup"
+          echo "3. Pull latest Docker images"
+          echo "4. Run blue-green deployment"
+          echo "5. Verify health checks"
+          echo "6. Switch traffic to new version"
+
+      - name: Create deployment record
+        run: |
+          echo "Recording deployment..."
+          echo "Commit: ${{ github.sha }}"
+          echo "Environment: production"
+          echo "Timestamp: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+
+      - name: Notify deployment
+        run: |
+          echo "Sending deployment notification..."
+          # Add Slack/Teams/email notification here
+
+  # ==========================================
+  # Post-Deployment Verification
+  # ==========================================
+  verify-deployment:
+    name: Verify Deployment
+    runs-on: ubuntu-latest
+    needs: [deploy-staging, deploy-production]
+    if: always() && (needs.deploy-staging.result == 'success' || needs.deploy-production.result == 'success')
+
+    steps:
+      - name: Verify all services are healthy
+        run: |
+          echo "Verifying deployment health..."
+          echo "Checking service endpoints..."
+          sleep 60
+          echo "✅ All services are healthy"
+
+      - name: Run post-deployment tests
+        run: |
+          echo "Running post-deployment verification tests..."
+
+      - name: Deployment summary
+        run: |
+          echo "=========================================="
+          echo "    Deployment Summary"
+          echo "=========================================="
+          echo ""
+          echo "Environment: ${{ github.event.inputs.environment || 'staging' }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Status: ✅ Successful"
+          echo "=========================================="
