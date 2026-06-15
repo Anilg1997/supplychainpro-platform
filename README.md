@@ -26,6 +26,10 @@
 |:---:|
 | ![Login](screenshots/login.svg) |
 
+| AI Demand Forecast |
+|:---:|
+| ![AI Forecast](screenshots/ai-forecast.svg) |
+
 ---
 
 ## 📋 Table of Contents

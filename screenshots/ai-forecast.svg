@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" font-family="'Inter', 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#667eea"/><stop offset="100%" stop-color="#764ba2"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.08"/></filter>
+  </defs>
+  <rect width="1200" height="750" fill="#f5f5f5"/>
+  <!-- Header -->
+  <rect width="1200" height="56" fill="white"/>
+  <line x1="0" y1="56" x2="1200" y2="56" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="24" y="36" fill="#1976D2" font-size="18" font-weight="700">📦 SupplyChain Pro</text>
+
+  <!-- Sidebar -->
+  <rect x="0" y="56" width="260" height="694" fill="white"/>
+  <line x1="259" y1="56" x2="259" y2="750" stroke="#e0e0e0" stroke-width="1"/>
+  <rect x="8" y="62" width="244" height="40" rx="8" fill="transparent"/>
+  <text x="36" y="88" font-size="13" fill="#555">📊 Dashboard</text>
+  <rect x="8" y="108" width="244" height="40" rx="8" fill="transparent"/>
+  <text x="36" y="134" font-size="13" fill="#555">🏭 Suppliers</text>
+  <rect x="8" y="154" width="244" height="40" rx="8" fill="transparent"/>
+  <text x="36" y="180" font-size="13" fill="#555">📦 Inventory</text>
+  <rect x="8" y="200" width="244" height="40" rx="8" fill="transparent"/>
+  <text x="36" y="226" font-size="13" fill="#555">🚚 Shipments</text>
+  <rect x="8" y="246" width="244" height="40" rx="8" fill="#E3F2FD"/>
+  <text x="36" y="272" font-size="13" fill="#1976D2" font-weight="600">🧠 AI Forecast</text>
+
+  <!-- Main Content -->
+  <text x="285" y="92" font-size="22" fill="#1a1a2e" font-weight="700">🧠 AI Demand Forecasting</text>
+  <text x="285" y="116" font-size="13" fill="#666">Machine learning powered predictions for inventory optimization</text>
+
+  <!-- AI Summary -->
+  <rect x="285" y="135" rx="12" ry="12" width="890" height="100" fill="white" filter="url(#shadow)"/>
+  <rect x="285" y="135" rx="12" ry="12" width="6" height="100" fill="url(#aiGrad)"/>
+  <text x="311" y="166" font-size="15" fill="#1a1a2e" font-weight="600">🔮 AI Forecast Summary (Next 30 Days)</text>
+  <text x="311" y="190" font-size="12" fill="#666">📈 Overall demand predicted to <tspan fill="#388e3c" font-weight="600">increase by 15.3%</tspan> — prepare inventory accordingly</text>
+  <text x="311" y="212" font-size="12" fill="#666">⚡ <tspan fill="#d32f2f" font-weight="600">Stock-out risk:</tspan> SKU-045, SKU-102, SKU-208 need reorder within 5 days</text>
+  <text x="311" y="230" font-size="12" fill="#666">💡 <tspan fill="#1976D2" font-weight="600">Cost-saving opportunity:</tspan> Bulk order for Category A can save ₹2.4L</text>
+
+  <!-- KPI Cards -->
+  <rect x="285" y="255" rx="12" ry="12" width="210" height="80" fill="white" filter="url(#shadow)"/>
+  <text x="301" y="284" font-size="11" fill="#666">Forecast Accuracy</text>
+  <text x="301" y="316" font-size="24" fill="#388e3c" font-weight="700">94.7%</text>
+  <rect x="510" y="255" rx="12" ry="12" width="210" height="80" fill="white" filter="url(#shadow)"/>
+  <text x="526" y="284" font-size="11" fill="#666">Predicted Demand</text>
+  <text x="526" y="316" font-size="24" fill="#1976D2" font-weight="700">28.5K</text>
+  <rect x="735" y="255" rx="12" ry="12" width="210" height="80" fill="white" filter="url(#shadow)"/>
+  <text x="751" y="284" font-size="11" fill="#666">Optimal Stock Level</text>
+  <text x="751" y="316" font-size="24" fill="#388e3c" font-weight="700">22.4K</text>
+  <rect x="960" y="255" rx="12" ry="12" width="210" height="80" fill="white" filter="url(#shadow)"/>
+  <text x="976" y="284" font-size="11" fill="#666">Cost Savings (YTD)</text>
+  <text x="976" y="316" font-size="24" fill="#388e3c" font-weight="700">₹8.2L</text>
+
+  <!-- Product Forecast Table -->
+  <rect x="285" y="355" rx="12" ry="12" width="590" height="360" fill="white" filter="url(#shadow)"/>
+  <text x="301" y="386" font-size="15" fill="#1a1a2e" font-weight="600">📋 Product Demand Forecast</text>
+  <!-- Table header -->
+  <rect x="301" y="400" width="560" height="32" fill="#f5f5f5"/>
+  <text x="312" y="421" font-size="11" fill="#666" font-weight="600">Product</text>
+  <text x="440" y="421" font-size="11" fill="#666" font-weight="600">Current Stock</text>
+  <text x="560" y="421" font-size="11" fill="#666" font-weight="600">Forecast Demand</text>
+  <text x="690" y="421" font-size="11" fill="#666" font-weight="600">AI Action</text>
+  <rect x="301" y="432" width="560" height="36" fill="transparent"/>
+  <text x="312" y="455" font-size="12" fill="#333">SKU-045 — Steel Rods</text>
+  <text x="440" y="455" font-size="12" fill="#d32f2f" font-weight="500">124</text>
+  <text x="560" y="455" font-size="12" fill="#333" font-weight="500">450</text>
+  <rect x="680" y="444" width="70" height="22" rx="6" fill="#FEF2F2"/>
+  <text x="700" y="460" font-size="10" fill="#d32f2f" font-weight="600">⚠️ Reorder</text>
+  <line x1="301" y1="472" x2="861" y2="472" stroke="#f5f5f5" stroke-width="1"/>
+  <rect x="301" y="472" width="560" height="36" fill="transparent"/>
+  <text x="312" y="495" font-size="12" fill="#333">SKU-102 — Copper Wire</text>
+  <text x="440" y="495" font-size="12" fill="#d32f2f" font-weight="500">78</text>
+  <text x="560" y="495" font-size="12" fill="#333" font-weight="500">320</text>
+  <rect x="680" y="484" width="70" height="22" rx="6" fill="#FEF2F2"/>
+  <text x="700" y="500" font-size="10" fill="#d32f2f" font-weight="600">⚠️ Reorder</text>
+  <line x1="301" y1="512" x2="861" y2="512" stroke="#f5f5f5" stroke-width="1"/>
+  <rect x="301" y="512" width="560" height="36" fill="transparent"/>
+  <text x="312" y="535" font-size="12" fill="#333">SKU-208 — Plastic Pellets</text>
+  <text x="440" y="535" font-size="12" fill="#f59e0b" font-weight="500">245</text>
+  <text x="560" y="535" font-size="12" fill="#333" font-weight="500">380</text>
+  <rect x="680" y="524" width="70" height="22" rx="6" fill="#FFF7ED"/>
+  <text x="700" y="540" font-size="10" fill="#f59e0b" font-weight="600">Reorder Soon</text>
+  <line x1="301" y1="552" x2="861" y2="552" stroke="#f5f5f5" stroke-width="1"/>
+  <rect x="301" y="552" width="560" height="36" fill="transparent"/>
+  <text x="312" y="575" font-size="12" fill="#333">SKU-031 — Electronic Chips</text>
+  <text x="440" y="575" font-size="12" fill="#388e3c" font-weight="500">890</text>
+  <text x="560" y="575" font-size="12" fill="#333" font-weight="500">750</text>
+  <rect x="680" y="564" width="70" height="22" rx="6" fill="#ECFDF5"/>
+  <text x="700" y="580" font-size="10" fill="#388e3c" font-weight="600">✅ In Stock</text>
+  <line x1="301" y1="592" x2="861" y2="592" stroke="#f5f5f5" stroke-width="1"/>
+  <rect x="301" y="592" width="560" height="36" fill="transparent"/>
+  <text x="312" y="615" font-size="12" fill="#333">SKU-178 — Packaging Boxes</text>
+  <text x="440" y="615" font-size="12" fill="#388e3c" font-weight="500">1,200</text>
+  <text x="560" y="615" font-size="12" fill="#333" font-weight="500">1,500</text>
+  <rect x="680" y="604" width="70" height="22" rx="6" fill="#FFF7ED"/>
+  <text x="700" y="620" font-size="10" fill="#f59e0b" font-weight="600">Reorder Soon</text>
+
+  <!-- Insights Panel -->
+  <rect x="890" y="355" rx="12" ry="12" width="280" height="360" fill="white" filter="url(#shadow)"/>
+  <text x="910" y="386" font-size="15" fill="#1a1a2e" font-weight="600">💡 AI Insights</text>
+  <rect x="910" y="398" rx="8" ry="8" width="240" height="70" fill="#E3F2FD"/>
+  <text x="926" y="418" font-size="12" fill="#1976D2" font-weight="600">📊 Seasonal Trend Detected</text>
+  <text x="926" y="436" font-size="11" fill="#666">Demand for steel rods peaks in</text>
+  <text x="926" y="452" font-size="11" fill="#666">Feb-Mar. Order 2 weeks in advance.</text>
+  <rect x="910" y="478" rx="8" ry="8" width="240" height="70" fill="#FEF2F2"/>
+  <text x="926" y="498" font-size="12" fill="#d32f2f" font-weight="600">⚠️ Supplier Risk Alert</text>
+  <text x="926" y="516" font-size="11" fill="#666">SteelCo Ltd has 60% lead time</text>
+  <text x="926" y="532" font-size="11" fill="#666">increase — consider alternative.</text>
+  <rect x="910" y="558" rx="8" ry="8" width="240" height="70" fill="#ECFDF5"/>
+  <text x="926" y="578" font-size="12" fill="#388e3c" font-weight="600">💰 Bulk Discount Available</text>
+  <text x="926" y="596" font-size="11" fill="#666">Order 500+ units of SKU-031 to</text>
+  <text x="926" y="612" font-size="11" fill="#666">get 12% discount. Save ₹45,000.</text>
+  <rect x="910" y="638" rx="8" ry="8" width="240" height="60" fill="#F3E5F5"/>
+  <text x="926" y="658" font-size="12" fill="#7B1FA2" font-weight="600">📈 ML Model Accuracy</text>
+  <text x="926" y="676" font-size="11" fill="#666">Using Random Forest + XGBoost</text>
+  <text x="926" y="690" font-size="11" fill="#666">MAE: 23 units | R²: 0.947</text>
+</svg>
