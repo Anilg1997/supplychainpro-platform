@@ -43,7 +43,7 @@ $missingCs = @()
 $composeSvcs = @("postgres","mongodb","redis","ollama","zookeeper","kafka","zipkin","prometheus","grafana","kafka-ui","mongo-express","pgadmin")
 $composeSvcs += $services
 foreach ($svc in $composeSvcs) {
-    if ($compose -notmatch "(?s)$svc:") { $missingCs += $svc }
+    if ($compose -notmatch "(?s)$svc\b") { $missingCs += $svc }
 }
 if ($missingCs.Count -eq 0) { Write-Host "  ✓ All services defined in docker-compose.yml" -ForegroundColor Green }
 else { Write-Host "  ✗ Missing in compose: $($missingCs -join ', ')" -ForegroundColor Red }
