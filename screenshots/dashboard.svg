@@ -1,159 +1,81 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" font-family="'Inter', 'Segoe UI', sans-serif">
-  <!-- Background -->
-  <rect width="1200" height="750" fill="#f5f5f5"/>
-  <!-- Header -->
-  <rect width="1200" height="56" fill="white"/>
-  <line x1="0" y1="56" x2="1200" y2="56" stroke="#e0e0e0" stroke-width="1"/>
-  <rect x="8" y="10" width="36" height="36" rx="8" fill="#1976D2"/>
-  <text x="14" y="34" font-size="14" fill="white" font-weight="bold">📦</text>
-  <text x="52" y="34" font-size="15" fill="#1a1a2e" font-weight="500">SupplyChain Pro</text>
-  <!-- Notification bell -->
-  <circle cx="1100" cy="28" r="8" fill="#F44336"/>
-  <text x="1097" y="32" font-size="9" fill="white" font-weight="600">3</text>
-  <!-- User -->
-  <circle cx="1150" cy="28" r="16" fill="#E3F2FD"/>
-  <text x="1150" y="34" font-size="13" fill="#1976D2" text-anchor="middle">U</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Segoe UI, -apple-system, sans-serif">
+  <defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0f172a"/><stop offset="100%" style="stop-color:#1e293b"/></linearGradient></defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
   <!-- Sidebar -->
-  <rect x="0" y="56" width="260" height="694" fill="white"/>
-  <line x1="259" y1="56" x2="259" y2="750" stroke="#e0e0e0" stroke-width="1"/>
-  <rect x="8" y="62" width="244" height="40" rx="8" fill="#E3F2FD"/>
-  <text x="36" y="88" font-size="13" fill="#1976D2" font-weight="500">📊 Dashboard</text>
-  <!-- Sidebar items -->
-  <g transform="translate(0, 108)">
-    <rect x="8" y="0" width="244" height="38" rx="6" fill="transparent"/>
-    <text x="36" y="26" font-size="13" fill="#555">🏭 Suppliers</text>
-    <rect x="8" y="44" width="244" height="38" rx="6" fill="transparent"/>
-    <text x="36" y="70" font-size="13" fill="#555">📦 Products</text>
-    <rect x="8" y="88" width="244" height="38" rx="6" fill="transparent"/>
-    <text x="36" y="114" font-size="13" fill="#555">📄 Purchase Requisitions</text>
-    <rect x="8" y="132" width="244" height="38" rx="6" fill="transparent"/>
-    <text x="36" y="158" font-size="13" fill="#555">🛒 Purchase Orders</text>
-    <rect x="8" y="176" width="244" height="38" rx="6" fill="transparent"/>
-    <text x="36" y="202" font-size="13" fill="#555">❓ RFQs</text>
-    <rect x="8" y="220" width="244" height="38" rx="6" fill="transparent"/>
-    <text x="36" y="246" font-size="13" fill="#555">📋 Contracts</text>
-    <rect x="8" y="264" width="244" height="38" rx="6" fill="transparent"/>
-    <text x="36" y="290" font-size="13" fill="#555">📊 Inventory</text>
-    <rect x="8" y="308" width="244" height="38" rx="6" fill="transparent"/>
-    <text x="36" y="334" font-size="13" fill="#555">🏢 Warehouses</text>
-    <rect x="8" y="352" width="244" height="38" rx="6" fill="transparent"/>
-    <text x="36" y="378" font-size="13" fill="#555">📋 Orders</text>
-    <rect x="8" y="396" width="244" height="38" rx="6" fill="transparent"/>
-    <text x="36" y="422" font-size="13" fill="#555">↩️ Returns</text>
-    <rect x="8" y="440" width="244" height="38" rx="6" fill="transparent"/>
-    <text x="36" y="466" font-size="13" fill="#555">🚚 Shipments</text>
-  </g>
-  <!-- Main Content -->
-  <text x="285" y="92" font-size="24" fill="#1a1a2e" font-weight="600">Dashboard</text>
-  <text x="285" y="114" font-size="13" fill="#666">Supply Chain Overview</text>
+  <rect x="0" y="0" width="240" height="720" fill="#1e293b"/><rect x="0" y="0" width="240" height="720" fill="#1e293b" opacity="0.8"/>
+  <rect x="16" y="16" width="208" height="40" rx="6" fill="#3b82f6"/>
+  <text x="40" y="42" fill="#fff" font-size="16" font-weight="700">SCAI Platform</text>
+  <rect x="16" y="72" width="208" height="1" fill="#334155"/>
+  <rect x="16" y="88" width="208" height="36" rx="6" fill="#3b82f6"/><text x="44" y="111" fill="#fff" font-size="13">📊 Dashboard</text>
+  <rect x="16" y="132" width="208" height="36" rx="6" fill="transparent"/><text x="44" y="155" fill="#94a3b8" font-size="13">🏭 Suppliers</text>
+  <rect x="16" y="176" width="208" height="36" rx="6" fill="transparent"/><text x="44" y="199" fill="#94a3b8" font-size="13">📦 Products</text>
+  <rect x="16" y="220" width="208" height="36" rx="6" fill="transparent"/><text x="44" y="243" fill="#94a3b8" font-size="13">📊 Inventory</text>
+  <rect x="16" y="264" width="208" height="36" rx="6" fill="transparent"/><text x="44" y="287" fill="#94a3b8" font-size="13">📋 Orders</text>
+  <rect x="16" y="308" width="208" height="36" rx="6" fill="transparent"/><text x="44" y="331" fill="#94a3b8" font-size="13">🚚 Shipments</text>
+  <rect x="16" y="352" width="208" height="1" fill="#334155"/>
+  <rect x="16" y="368" width="208" height="36" rx="6" fill="#6366f1"/><text x="44" y="391" fill="#fff" font-size="13">🤖 AI RAG Search</text>
+  <rect x="16" y="412" width="208" height="36" rx="6" fill="#8b5cf6"/><text x="44" y="435" fill="#fff" font-size="13">🔧 Admin Panel</text>
+  <!-- Header -->
+  <rect x="240" y="0" width="1040" height="56" fill="#1e293b"/>
+  <text x="270" y="34" fill="#f1f5f9" font-size="20" font-weight="700">Dashboard</text>
+  <rect x="1100" y="12" width="36" height="36" rx="18" fill="#334155"/>
+  <circle cx="1118" cy="30" r="18" fill="#3b82f6"/><text x="1118" y="36" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">A</text>
   <!-- KPI Cards -->
-  <!-- Card 1 -->
-  <rect x="285" y="135" width="200" height="80" rx="12" fill="white" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.08))"/>
-  <rect x="297" y="147" width="44" height="44" rx="10" fill="#E3F2FD"/>
-  <text x="305" y="174" font-size="20" fill="#1976D2">🏭</text>
-  <text x="352" y="166" font-size="20" fill="#1a1a2e" font-weight="700">156</text>
-  <text x="352" y="184" font-size="11" fill="#666">Active Suppliers</text>
-  <!-- Card 2 -->
-  <rect x="500" y="135" width="200" height="80" rx="12" fill="white" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.08))"/>
-  <rect x="512" y="147" width="44" height="44" rx="10" fill="#E8F5E9"/>
-  <text x="520" y="174" font-size="20" fill="#388E3C">🛒</text>
-  <text x="567" y="166" font-size="20" fill="#1a1a2e" font-weight="700">2,847</text>
-  <text x="567" y="184" font-size="11" fill="#666">Purchase Orders</text>
-  <!-- Card 3 -->
-  <rect x="715" y="135" width="200" height="80" rx="12" fill="white" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.08))"/>
-  <rect x="727" y="147" width="44" height="44" rx="10" fill="#FFF3E0"/>
-  <text x="735" y="174" font-size="20" fill="#F57C00">📦</text>
-  <text x="782" y="166" font-size="20" fill="#1a1a2e" font-weight="700">12,590</text>
-  <text x="782" y="184" font-size="11" fill="#666">Products in Stock</text>
-  <!-- Card 4 -->
-  <rect x="930" y="135" width="200" height="80" rx="12" fill="white" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.08))"/>
-  <rect x="942" y="147" width="44" height="44" rx="10" fill="#FCE4EC"/>
-  <text x="950" y="174" font-size="20" fill="#D32F2F">🚚</text>
-  <text x="997" y="166" font-size="20" fill="#1a1a2e" font-weight="700">89</text>
-  <text x="997" y="184" font-size="11" fill="#666">Active Shipments</text>
-  <!-- Card 5 -->
-  <rect x="285" y="230" width="200" height="80" rx="12" fill="white" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.08))"/>
-  <rect x="297" y="242" width="44" height="44" rx="10" fill="#F3E5F5"/>
-  <text x="305" y="269" font-size="20" fill="#7B1FA2">💰</text>
-  <text x="352" y="261" font-size="20" fill="#1a1a2e" font-weight="700">$2.4M</text>
-  <text x="352" y="279" font-size="11" fill="#666">Outstanding Invoices</text>
-  <!-- Card 6 -->
-  <rect x="500" y="230" width="200" height="80" rx="12" fill="white" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.08))"/>
-  <rect x="512" y="242" width="44" height="44" rx="10" fill="#E0F2F1"/>
-  <text x="520" y="269" font-size="20" fill="#00796B">✅</text>
-  <text x="567" y="261" font-size="20" fill="#1a1a2e" font-weight="700">98.5%</text>
-  <text x="567" y="279" font-size="11" fill="#666">Quality Rate</text>
-  <!-- Recent Purchase Orders Card -->
-  <rect x="285" y="330" width="470" height="380" rx="12" fill="white" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.08))"/>
-  <text x="301" y="362" font-size="15" fill="#1a1a2e" font-weight="600">Recent Purchase Orders</text>
-  <!-- Table header -->
-  <rect x="301" y="380" width="438" height="36" fill="#F5F5F5"/>
-  <text x="312" y="403" font-size="11" fill="#666" font-weight="600">PO #</text>
-  <text x="420" y="403" font-size="11" fill="#666" font-weight="600">Supplier</text>
-  <text x="560" y="403" font-size="11" fill="#666" font-weight="600">Amount</text>
-  <text x="670" y="403" font-size="11" fill="#666" font-weight="600">Status</text>
-  <!-- Row 1 -->
-  <rect x="301" y="416" width="438" height="36" fill="transparent"/>
-  <text x="312" y="439" font-size="12" fill="#333">PO-2024-001</text>
-  <text x="420" y="439" font-size="12" fill="#333">TechSupply Co.</text>
-  <text x="560" y="439" font-size="12" fill="#333" font-weight="500">$45,200</text>
-  <rect x="650" y="428" width="64" height="22" rx="6" fill="#E8F5E9"/>
-  <text x="664" y="444" font-size="10" fill="#388E3C" font-weight="600">Delivered</text>
-  <line x1="301" y1="459" x2="739" y2="459" stroke="#F5F5F5" stroke-width="1"/>
-  <!-- Row 2 -->
-  <rect x="301" y="460" width="438" height="36" fill="transparent"/>
-  <text x="312" y="483" font-size="12" fill="#333">PO-2024-002</text>
-  <text x="420" y="483" font-size="12" fill="#333">GlobalParts Ltd.</text>
-  <text x="560" y="483" font-size="12" fill="#333" font-weight="500">$12,800</text>
-  <rect x="646" y="472" width="72" height="22" rx="6" fill="#FFF3E0"/>
-  <text x="662" y="488" font-size="10" fill="#F57C00" font-weight="600">In Transit</text>
-  <!-- Row 3 -->
-  <rect x="301" y="504" width="438" height="36" fill="transparent"/>
-  <text x="312" y="527" font-size="12" fill="#333">PO-2024-003</text>
-  <text x="420" y="527" font-size="12" fill="#333">RawMaterials Inc.</text>
-  <text x="560" y="527" font-size="12" fill="#333" font-weight="500">$89,500</text>
-  <rect x="656" y="516" width="56" height="22" rx="6" fill="#FEF9E7"/>
-  <text x="666" y="532" font-size="10" fill="#F39C12" font-weight="600">Pending</text>
-  <!-- Row 4 -->
-  <rect x="301" y="548" width="438" height="36" fill="transparent"/>
-  <text x="312" y="571" font-size="12" fill="#333">PO-2024-004</text>
-  <text x="420" y="571" font-size="12" fill="#333">PackPro Solutions</text>
-  <text x="560" y="571" font-size="12" fill="#333" font-weight="500">$23,100</text>
-  <rect x="640" y="560" width="80" height="22" rx="6" fill="#E3F2FD"/>
-  <text x="660" y="576" font-size="10" fill="#1976D2" font-weight="600">Processing</text>
-  <!-- Row 5 -->
-  <rect x="301" y="592" width="438" height="36" fill="transparent"/>
-  <text x="312" y="615" font-size="12" fill="#333">PO-2024-005</text>
-  <text x="420" y="615" font-size="12" fill="#333">ElectroSys Corp.</text>
-  <text x="560" y="615" font-size="12" fill="#333" font-weight="500">$67,300</text>
-  <rect x="650" y="604" width="64" height="22" rx="6" fill="#E8F5E9"/>
-  <text x="664" y="620" font-size="10" fill="#388E3C" font-weight="600">Delivered</text>
-  <!-- Alerts Card -->
-  <rect x="770" y="330" width="420" height="380" rx="12" fill="white" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.08))"/>
-  <text x="786" y="362" font-size="15" fill="#1a1a2e" font-weight="600">Alerts &amp; Notifications</text>
-  <!-- Alert 1 -->
-  <rect x="786" y="380" width="388" height="48" rx="6" fill="transparent"/>
-  <circle cx="800" cy="404" r="10" fill="#FFF3E0"/>
-  <text x="795" y="409" font-size="11" fill="#F57C00">⚠️</text>
-  <text x="822" y="400" font-size="12" fill="#333">Inventory low: SKU-TITAN-082</text>
-  <text x="822" y="416" font-size="11" fill="#999">2 hours ago</text>
-  <line x1="786" y1="431" x2="1174" y2="431" stroke="#F5F5F5" stroke-width="1"/>
-  <!-- Alert 2 -->
-  <rect x="786" y="435" width="388" height="48" rx="6" fill="transparent"/>
-  <circle cx="800" cy="459" r="10" fill="#E3F2FD"/>
-  <text x="795" y="464" font-size="11" fill="#1976D2">ℹ️</text>
-  <text x="822" y="455" font-size="12" fill="#333">PO-2024-003 requires approval</text>
-  <text x="822" y="471" font-size="11" fill="#999">3 hours ago</text>
-  <!-- Alert 3 -->
-  <rect x="786" y="490" width="388" height="48" rx="6" fill="transparent"/>
-  <circle cx="800" cy="514" r="10" fill="#E8F5E9"/>
-  <text x="795" y="519" font-size="11" fill="#388E3C">✅</text>
-  <text x="822" y="510" font-size="12" fill="#333">Quality check #QC-045 passed</text>
-  <text x="822" y="526" font-size="11" fill="#999">5 hours ago</text>
-  <!-- Alert 4 -->
-  <rect x="786" y="545" width="388" height="48" rx="6" fill="transparent"/>
-  <circle cx="800" cy="569" r="10" fill="#E3F2FD"/>
-  <text x="795" y="574" font-size="11" fill="#1976D2">🚚</text>
-  <text x="822" y="565" font-size="12" fill="#333">Shipment SHP-029 departed</text>
-  <text x="822" y="581" font-size="11" fill="#999">8 hours ago</text>
+  <rect x="260" y="72" width="235" height="120" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="280" y="100" fill="#f1f5f9" font-size="13" font-weight="600">Total Orders</text><text x="460" y="105" text-anchor="end" fill="#f1f5f9" font-size="28" font-weight="700">1,247</text>
+  <rect x="280" y="118" width="60" height="24" rx="4" fill="#22c55e" opacity="0.2"/><text x="310" y="135" text-anchor="middle" fill="#22c55e" font-size="11" font-weight="600">+12.5%</text>
+  <text x="280" y="155" fill="#64748b" font-size="11">vs last month: 1,108</text>
+  <text x="280" y="175" fill="#64748b" font-size="11">📈 Revenue: $1.2M</text>
+  <rect x="510" y="72" width="235" height="120" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="530" y="100" fill="#f1f5f9" font-size="13" font-weight="600">Active Suppliers</text><text x="710" y="105" text-anchor="end" fill="#f1f5f9" font-size="28" font-weight="700">89</text>
+  <rect x="530" y="118" width="55" height="24" rx="4" fill="#22c55e" opacity="0.2"/><text x="557" y="135" text-anchor="middle" fill="#22c55e" font-size="11" font-weight="600">+3 new</text>
+  <text x="530" y="155" fill="#64748b" font-size="11">Pending approvals: 12</text>
+  <text x="530" y="175" fill="#64748b" font-size="11">⭐ Avg rating: 4.2/5</text>
+  <rect x="760" y="72" width="235" height="120" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="780" y="100" fill="#f1f5f9" font-size="13" font-weight="600">Inventory Value</text><text x="960" y="105" text-anchor="end" fill="#f1f5f9" font-size="28" font-weight="700">$8.3M</text>
+  <rect x="780" y="118" width="50" height="24" rx="4" fill="#f59e0b" opacity="0.2"/><text x="805" y="135" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600">-2.1%</text>
+  <text x="780" y="155" fill="#64748b" font-size="11">Items in stock: 12,450</text>
+  <text x="780" y="175" fill="#64748b" font-size="11">⚠ Low stock alerts: 23</text>
+  <rect x="1010" y="72" width="250" height="120" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="1030" y="100" fill="#f1f5f9" font-size="13" font-weight="600">AI Insights</text>
+  <text x="1030" y="130" fill="#a78bfa" font-size="12">🤖 RAG queries today: 45</text>
+  <text x="1030" y="150" fill="#a78bfa" font-size="12">🎯 Model accuracy: 94.2%</text>
+  <text x="1030" y="170" fill="#a78bfa" font-size="12">⚡ Latency: 120ms avg</text>
+  <!-- Charts area -->
+  <rect x="260" y="208" width="500" height="240" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="280" y="236" fill="#f1f5f9" font-size="15" font-weight="600">Revenue Trend</text>
+  <rect x="280" y="255" width="460" height="1" fill="#334155"/>
+  <polyline points="300,380 360,360 420,370 480,340 540,350 600,310 660,320 720,280" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <polyline points="300,400 360,390 420,395 480,375 540,380 600,360 660,355 720,340" fill="none" stroke="#22c55e" stroke-width="2"/>
+  <text x="290" y="415" fill="#3b82f6" font-size="10">● Revenue</text><text x="350" y="415" fill="#22c55e" font-size="10">● Orders</text>
+  <!-- Recent orders table -->
+  <rect x="775" y="208" width="485" height="240" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="795" y="236" fill="#f1f5f9" font-size="15" font-weight="600">Recent Purchase Orders</text>
+  <rect x="795" y="255" width="445" height="1" fill="#334155"/>
+  <text x="800" y="278" fill="#f1f5f9" font-size="12" font-weight="600">PO-2024-001</text><text x="1060" y="278" text-anchor="end" fill="#f1f5f9" font-size="12">$45,000</text>
+  <text x="800" y="296" fill="#64748b" font-size="11">TechCorp Inc. · Electronics</text>
+  <rect x="1100" y="266" width="60" height="20" rx="4" fill="#22c55e" opacity="0.2"/><text x="1130" y="281" text-anchor="middle" fill="#22c55e" font-size="10">Completed</text>
+  <rect x="800" y="304" width="445" height="1" fill="#334155"/>
+  <text x="800" y="328" fill="#f1f5f9" font-size="12" font-weight="600">PO-2024-002</text><text x="1060" y="328" text-anchor="end" fill="#f1f5f9" font-size="12">$128,500</text>
+  <text x="800" y="346" fill="#64748b" font-size="11">LogiShip Co. · Logistics</text>
+  <rect x="1100" y="316" width="60" height="20" rx="4" fill="#3b82f6" opacity="0.2"/><text x="1130" y="331" text-anchor="middle" fill="#3b82f6" font-size="10">In Progress</text>
+  <rect x="800" y="354" width="445" height="1" fill="#334155"/>
+  <text x="800" y="378" fill="#f1f5f9" font-size="12" font-weight="600">PO-2024-003</text><text x="1060" y="378" text-anchor="end" fill="#f1f5f9" font-size="12">$22,800</text>
+  <text x="800" y="396" fill="#64748b" font-size="11">RawMats Ltd. · Raw Materials</text>
+  <rect x="1100" y="366" width="60" height="20" rx="4" fill="#f59e0b" opacity="0.2"/><text x="1130" y="381" text-anchor="middle" fill="#f59e0b" font-size="10">Pending</text>
+  <!-- Bottom area -->
+  <rect x="260" y="464" width="350" height="120" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="280" y="492" fill="#f1f5f9" font-size="13" font-weight="600">🔔 Recent Notifications</text>
+  <text x="280" y="518" fill="#64748b" font-size="12">• PO-2024-002 approved by John</text>
+  <text x="280" y="538" fill="#64748b" font-size="12">• Inventory reorder triggered for SKU-123</text>
+  <text x="280" y="558" fill="#64748b" font-size="12">• Supplier rating updated for TechCorp</text>
+  <rect x="625" y="464" width="350" height="120" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="645" y="492" fill="#f1f5f9" font-size="13" font-weight="600">🤖 AI Assistant</text>
+  <text x="645" y="518" fill="#64748b" font-size="12">"What's the status of PO-2024-002?"</text>
+  <rect x="645" y="530" width="310" height="40" rx="6" fill="#334155" opacity="0.5"/>
+  <text x="660" y="555" fill="#a78bfa" font-size="12">PO-2024-002 is In Progress with LogiShip Co.</text>
+  <rect x="990" y="464" width="270" height="120" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="1010" y="492" fill="#f1f5f9" font-size="13" font-weight="600">⚡ Quick Actions</text>
+  <rect x="1010" y="504" width="230" height="30" rx="4" fill="#3b82f6"/><text x="1125" y="524" text-anchor="middle" fill="#fff" font-size="12">Create Purchase Order</text>
+  <rect x="1010" y="540" width="230" height="30" rx="4" fill="#6366f1"/><text x="1125" y="560" text-anchor="middle" fill="#fff" font-size="12">Ask AI Assistant</text>
 </svg>
