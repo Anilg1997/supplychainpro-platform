@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../shared/shared.module';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { ShipmentsRoutingModule } from './shipments-routing.module';
 import { ShipmentsComponent } from './shipments.component';
@@ -14,6 +15,7 @@ import { ShipmentsComponent } from './shipments.component';
     CommonModule,
     SharedModule,
     MatStepperModule,
+    MatProgressBarModule,
     ShipmentsRoutingModule
   ]
 })

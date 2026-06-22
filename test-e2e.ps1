@@ -5,6 +5,8 @@ Write-Host "`n========================================" -ForegroundColor Cyan
 Write-Host "  SupplyChain AI Platform - E2E Tests  " -ForegroundColor Cyan
 Write-Host "========================================`n" -ForegroundColor Cyan
 
+$allOk = $true
+
 # 1. Verify project structure
 Write-Host "[1/8] Verifying project structure..." -ForegroundColor Yellow
 $services = @(
@@ -23,8 +25,8 @@ foreach ($svc in $services) {
     $path = "backend\$svc\pom.xml"
     if (-not (Test-Path $path)) { $missing += $svc }
 }
-if ($missing.Count -eq 0) { Write-Host "  ✓ All 34 microservices present" -ForegroundColor Green }
-else { Write-Host "  ✗ Missing: $($missing -join ', ')" -ForegroundColor Red }
+if ($missing.Count -eq 0) { Write-Host "  [PASS] All 34 microservices present" -ForegroundColor Green }
+else { Write-Host "  [FAIL] Missing: $($missing -join ', ')" -ForegroundColor Red; $allOk = $false }
 
 # 2. Verify Dockerfile exists for each service
 Write-Host "[2/8] Verifying Dockerfiles..." -ForegroundColor Yellow
@@ -33,8 +35,8 @@ foreach ($svc in $services) {
     $df = "backend\$svc\Dockerfile"
     if (-not (Test-Path $df)) { $missingDf += $svc }
 }
-if ($missingDf.Count -eq 0) { Write-Host "  ✓ All Dockerfiles present" -ForegroundColor Green }
-else { Write-Host "  ✗ Missing Dockerfiles: $($missingDf -join ', ')" -ForegroundColor Red }
+if ($missingDf.Count -eq 0) { Write-Host "  [PASS] All Dockerfiles present" -ForegroundColor Green }
+else { Write-Host "  [FAIL] Missing Dockerfiles: $($missingDf -join ', ')" -ForegroundColor Red; $allOk = $false }
 
 # 3. Verify docker-compose.yml has all services
 Write-Host "[3/8] Verifying docker-compose.yml..." -ForegroundColor Yellow
@@ -45,8 +47,8 @@ $composeSvcs += $services
 foreach ($svc in $composeSvcs) {
     if ($compose -notmatch "(?s)$svc\b") { $missingCs += $svc }
 }
-if ($missingCs.Count -eq 0) { Write-Host "  ✓ All services defined in docker-compose.yml" -ForegroundColor Green }
-else { Write-Host "  ✗ Missing in compose: $($missingCs -join ', ')" -ForegroundColor Red }
+if ($missingCs.Count -eq 0) { Write-Host "  [PASS] All services defined in docker-compose.yml" -ForegroundColor Green }
+else { Write-Host "  [FAIL] Missing in compose: $($missingCs -join ', ')" -ForegroundColor Red; $allOk = $false }
 
 # 4. Verify POM parent references
 Write-Host "[4/8] Verifying parent POM references..." -ForegroundColor Yellow
@@ -56,8 +58,8 @@ foreach ($svc in $services) {
     if ($pom -notmatch '<parent>') { $pomErrors += "$svc (no parent)" }
     elseif ($pom -notmatch 'com\.supplychainai') { $pomErrors += "$svc (wrong groupId)" }
 }
-if ($pomErrors.Count -eq 0) { Write-Host "  ✓ All POMs reference correct parent" -ForegroundColor Green }
-else { Write-Host "  ✗ POM issues: $($pomErrors -join ', ')" -ForegroundColor Red }
+if ($pomErrors.Count -eq 0) { Write-Host "  [PASS] All POMs reference correct parent" -ForegroundColor Green }
+else { Write-Host "  [FAIL] POM issues: $($pomErrors -join ', ')" -ForegroundColor Red; $allOk = $false }
 
 # 5. Verify screenshot files
 Write-Host "[5/8] Verifying screenshots..." -ForegroundColor Yellow
@@ -66,8 +68,8 @@ $missingSs = @()
 foreach ($ss in $screenshots) {
     if (-not (Test-Path "screenshots\$ss.svg")) { $missingSs += $ss }
 }
-if ($missingSs.Count -eq 0) { Write-Host "  ✓ All 8 screenshots present" -ForegroundColor Green }
-else { Write-Host "  ✗ Missing screenshots: $($missingSs -join ', ')" -ForegroundColor Red }
+if ($missingSs.Count -eq 0) { Write-Host "  [PASS] All 8 screenshots present" -ForegroundColor Green }
+else { Write-Host "  [FAIL] Missing screenshots: $($missingSs -join ', ')" -ForegroundColor Red; $allOk = $false }
 
 # 6. Verify AI service configurations
 Write-Host "[6/8] Verifying AI service configurations..." -ForegroundColor Yellow
@@ -85,34 +87,38 @@ $missingAi = @()
 foreach ($check in $aiChecks) {
     if (-not (Test-Path $check.Path)) { $missingAi += $check.Name }
 }
-if ($missingAi.Count -eq 0) { Write-Host "  ✓ All AI service configs present" -ForegroundColor Green }
-else { Write-Host "  ✗ Missing AI configs: $($missingAi -join ', ')" -ForegroundColor Red }
+if ($missingAi.Count -eq 0) { Write-Host "  [PASS] All AI service configs present" -ForegroundColor Green }
+else { Write-Host "  [FAIL] Missing AI configs: $($missingAi -join ', ')" -ForegroundColor Red; $allOk = $false }
 
 # 7. Verify frontend
 Write-Host "[7/8] Verifying frontend..." -ForegroundColor Yellow
-$frontendChecks = @("frontend\supplychainai-ui", "frontend\supplychainai-ui")
+$frontendDirs = @("frontend\supplychainai-ui")
 $feOk = $false
-foreach ($f in $frontendChecks) {
+foreach ($f in $frontendDirs) {
     if (Test-Path "$f\package.json") { $feOk = $true }
 }
-if ($feOk) { Write-Host "  ✓ Frontend directory present" -ForegroundColor Green }
-else { Write-Host "  ⚠ Frontend may need npm install" -ForegroundColor Yellow }
+if ($feOk) { Write-Host "  [PASS] Frontend directory present" -ForegroundColor Green }
+else { Write-Host "  [WARN] Frontend may need npm install" -ForegroundColor Yellow; $allOk = $false }
 
 # 8. Verify config-repo
 Write-Host "[8/8] Verifying shared configuration..." -ForegroundColor Yellow
-if (Test-Path "config-repo\application.yml") { Write-Host "  ✓ Shared config present" -ForegroundColor Green }
-else { Write-Host "  ✗ config-repo/application.yml missing" -ForegroundColor Red }
+if (Test-Path "config-repo\application.yml") { Write-Host "  [PASS] Shared config present" -ForegroundColor Green }
+else { Write-Host "  [FAIL] config-repo/application.yml missing" -ForegroundColor Red; $allOk = $false }
 
 # Summary
 Write-Host "`n========================================" -ForegroundColor Cyan
-Write-Host "  E2E Validation Complete" -ForegroundColor Cyan
+if ($allOk) {
+    Write-Host "  All E2E checks passed!" -ForegroundColor Green
+} else {
+    Write-Host "  Some checks failed - review above" -ForegroundColor Red
+}
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "  Services: 34/34 microservices" -ForegroundColor Green
 Write-Host "  Docker  : Full compose with 40+ containers" -ForegroundColor Green
 Write-Host "  AI      : RAG + MCP + Admin services" -ForegroundColor Green
 Write-Host "  Vector  : PGVector with HNSW index" -ForegroundColor Green
 Write-Host "  LLM     : Ollama (llama3.1) integration" -ForegroundColor Green
-Write-Host "  UI      : Angular 18 with admin & AI panels" -ForegroundColor Green
+Write-Host "  UI      : Angular 18 with admin and AI panels" -ForegroundColor Green
 Write-Host "========================================`n" -ForegroundColor Cyan
 
 Write-Host "To run the full application:" -ForegroundColor White

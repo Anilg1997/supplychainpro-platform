@@ -83,7 +83,7 @@ export class AiRagComponent {
 
   askQuestion(): void {
     if (!this.chatMessage?.trim()) return;
-    this.snackBar.open(`AI: "${this.chatMessage}" — This is a mock response for demo purposes.', 'Close', { duration: 4000 });
+    this.snackBar.open('AI: "' + this.chatMessage + '" - This is a mock response for demo purposes.', 'Close', { duration: 4000 });
     this.chatMessage = '';
   }
 
